@@ -4,6 +4,7 @@
 
 // Variables
 $primary: rgb(88, 184, 100);
+$primary-hover: rgb(116, 184, 125);
 
 $white: #f6f6f6;
 
@@ -23,4 +24,5 @@ $white: #f6f6f6;
 
 body {
   margin: 0px;
+  background-color: $white;
 }

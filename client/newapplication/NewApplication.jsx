@@ -5,7 +5,7 @@ import './newapplication.scss';
 const NewApplication = () => {
   return (
     <div>
-      <form id="application-form" action="/new-application-form">
+      <form id="application-form" action="/new-application-form" method="POST">
         <label for="companyName">Company Name</label>
         <input
           type="text"
@@ -27,7 +27,7 @@ const NewApplication = () => {
           type="text"
           id="date"
           name="date"
-          placeholder="Date which you applied..."
+          placeholder="Application date"
         />
         <br />
         <label for="deadline">Application Deadline</label>
@@ -53,6 +53,11 @@ const NewApplication = () => {
           name="url"
           placeholder="URL for the application..."
         />
+        <br />
+        <label for="coverLetter" className="checkbox">
+          Have you submitted your cover letter for this job
+        </label>
+        <input type="checkbox" id="applied" name="coverLetter" value="true" />
         <br />
         <label for="applied" className="checkbox">
           Have you submitted your application for this job

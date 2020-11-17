@@ -9,7 +9,12 @@
   }
 
   input {
-    margin-left: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+
+    box-shadow: 1px 1px 5px #aaaaaa;
+    border: none;
+    border-radius: 3px;
   }
 
   #submit {
@@ -19,16 +24,12 @@
     background-color: $primary;
     color: $white;
 
-    border: none;
     border-radius: 5px;
     padding: 5px 10px;
 
     &:hover {
       cursor: pointer;
+      background-color: $primary-hover;
     }
-  }
-
-  #checkbox input:checked ~ .checkmark {
-    background-color: red;
   }
 }
