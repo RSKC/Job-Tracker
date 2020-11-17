@@ -1,0 +1,28 @@
+/* This file contains all global styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap'); // Our font - Mulish
+
+// Variables
+$primary: rgb(88, 184, 100);
+$primary-hover: rgb(116, 184, 125);
+
+$white: #f6f6f6;
+
+// Mix-ins
+
+// flexCenter will center a div and set the flex-direction to row
+@mixin flexCenter() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-family: 'Mulish';
+}
+
+body {
+  margin: 0px;
+  background-color: $white;
+}

@@ -1,7 +1,6 @@
-div {
-  background-color: red;
-}
+@import '../styles';
 
-h3 {
-  color: blue;
+.switch {
+  background-color: $white;
+  margin-top: 5px;
 }
