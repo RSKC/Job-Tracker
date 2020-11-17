@@ -1,0 +1,10 @@
+@import '../styles';
+
+.dashboard {
+  // This centers a div, check client/styles.scss to see the mixin's definition
+  @include flexCenter();
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 40px;
+}
