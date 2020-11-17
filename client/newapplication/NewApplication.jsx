@@ -27,7 +27,7 @@ const NewApplication = () => {
           type="text"
           id="date"
           name="date"
-          placeholder="Application date"
+          placeholder="Application date..."
         />
         <br />
         <label for="deadline">Application Deadline</label>
@@ -51,7 +51,7 @@ const NewApplication = () => {
           type="text"
           id="url"
           name="url"
-          placeholder="URL for the application..."
+          placeholder="Application URL..."
         />
         <br />
         <label for="coverLetter" className="checkbox">

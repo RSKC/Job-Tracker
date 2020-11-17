@@ -1,7 +1,6 @@
 @import '../styles';
 
 #application-form {
-  height: 5000px;
   padding: 30px;
 
   * {
@@ -31,5 +30,9 @@
       cursor: pointer;
       background-color: $primary-hover;
     }
+  }
+
+  input[type='checkbox'] {
+    visibility: hidden;
   }
 }
