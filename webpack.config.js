@@ -22,22 +22,18 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      }
-    ]
+      },
+    ],
   },
-  // devServer: {
-  //   publicPath: '/build/',
-  //   proxy: {
-  //     '/': 'http:localhost:3000',
-  //   },
-  //   compress: true,
-  //   disableHostCheck: true,
-  // },
   devServer: {
-    contentBase: path.join(__dirname, 'build')
+    publicPath: '/build/',
+    proxy: {
+      '/': 'http://localhost:3000',
+    },
+    compress: true,
+    disableHostCheck: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
 };
-
