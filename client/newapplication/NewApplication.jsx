@@ -6,47 +6,52 @@ const NewApplication = () => {
   return (
     <div>
       <form id="application-form" action="/new-application-form" method="POST">
-        <label for="companyName">Company Name</label>
+        <label htmlFor="companyName">Company Name</label>
         <input
           type="text"
           id="companyName"
           name="companyName"
           placeholder="Company name..."
+          required
         />
         <br />
-        <label for="role">Role for this job application</label>
+        <label htmlFor="role">Role for this job application</label>
         <input
           type="text"
           id="role"
           name="role"
           placeholder="Name of the role..."
+          required
         />
         <br />
-        <label for="date">Application Date</label>
+        <label htmlFor="date">Application Date</label>
         <input
           type="text"
           id="date"
           name="date"
           placeholder="Application date..."
+          required
         />
         <br />
-        <label for="deadline">Application Deadline</label>
+        <label htmlFor="deadline">Application Deadline</label>
         <input
           type="text"
           id="deadline"
           name="deadline"
           placeholder="Application deadline..."
+          required
         />
         <br />
-        <label for="location">Job location</label>
+        <label htmlFor="location">Job location</label>
         <input
           type="text"
           id="location"
           name="location"
           placeholder="Job location..."
+          required
         />
         <br />
-        <label for="url">Job application URL</label>
+        <label htmlFor="url">Job application URL</label>
         <input
           type="text"
           id="url"
@@ -54,17 +59,29 @@ const NewApplication = () => {
           placeholder="Application URL..."
         />
         <br />
-        <label for="coverLetter" className="checkbox">
+        <label htmlFor="coverLetter">
           Have you submitted your cover letter for this job
         </label>
-        <input type="checkbox" id="applied" name="coverLetter" value="true" />
+        <input
+          type="checkbox"
+          id="applied"
+          name="coverLetter"
+          value="true"
+          className="checkbox"
+        />
         <br />
-        <label for="applied" className="checkbox">
+        <label htmlFor="applied">
           Have you submitted your application for this job
         </label>
-        <input type="checkbox" id="applied" name="applied" value="true" />
+        <input
+          type="checkbox"
+          id="applied"
+          name="applied"
+          value="true"
+          className="checkbox"
+        />
         <br />
-        <label for="phoneScreen" className="checkbox">
+        <label htmlFor="phoneScreen">
           Have you received phone screen for this job application?
         </label>
         <input
@@ -72,12 +89,19 @@ const NewApplication = () => {
           id="phoneScreen"
           name="phoneScreen"
           value="true"
+          className="checkbox"
         />
         <br />
-        <label for="onsite" className="checkbox">
+        <label htmlFor="onsite">
           Have you received onsite interview for this job application?
         </label>
-        <input type="checkbox" id="onsite" name="onsite" value="true" />
+        <input
+          type="checkbox"
+          id="onsite"
+          name="onsite"
+          value="true"
+          className="checkbox"
+        />
         <br />
         <input type="submit" id="submit" value="Submit" />
       </form>
