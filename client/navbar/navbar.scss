@@ -1,0 +1,23 @@
+@import '../styles';
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0px 3px 1000px #aaaaaa;
+
+  // Spacing
+  padding: 10px 0px;
+}
+
+.link {
+  // Font
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+
+  // Spacing
+  margin: 0px 15px;
+
+  &:hover {
+    color: $primary;
+  }
+}
