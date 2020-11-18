@@ -14,27 +14,57 @@ const NewApplication = () => {
           <h3 className="heading">Add a new application</h3>
           <label htmlFor="companyName">Company Name</label>
           <br />
-          <input type="text" id="companyName" name="companyName" required />
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            placeholder="e.g. Uber"
+            required
+          />
           <br />
           <label htmlFor="role">Role for this job application</label>
           <br />
-          <input type="text" id="role" name="role" required />
+          <input
+            type="text"
+            id="role"
+            name="role"
+            placeholder="e.g. Backend Engineer"
+            required
+          />
           <br />
           <label htmlFor="date">Application Date</label>
           <br />
-          <input type="text" id="date" name="date" required />
+          <input
+            type="text"
+            id="date"
+            name="date"
+            placeholder="e.g. 1/1/2020"
+            required
+          />
           <br />
           <label htmlFor="deadline">Application Deadline</label>
           <br />
-          <input type="text" id="deadline" name="deadline" required />
+          <input
+            type="text"
+            id="deadline"
+            name="deadline"
+            placeholder="e.g. 1/30/2020"
+            required
+          />
           <br />
           <label htmlFor="location">Job location</label>
           <br />
-          <input type="text" id="location" name="location" required />
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g. New York City"
+            required
+          />
           <br />
           <label htmlFor="url">Job application URL</label>
           <br />
-          <input type="text" id="url" name="url" />
+          <input type="text" id="url" name="url" placeholder="e.g. uber.com" />
           <br />
           <label htmlFor="coverLetter" className="container">
             Have you submitted your cover letter for this job?
