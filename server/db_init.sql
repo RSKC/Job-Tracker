@@ -16,22 +16,26 @@ CREATE TABLE Applications
   FOREIGN KEY (location_id) REFERENCES locations (_id)
 );
 
+
 CREATE TABLE Companies
 (
   _id SERIAL PRIMARY KEY,
-  name VARCHAR NOT NULL
+  name VARCHAR NOT NULL 
+  CONSTRAINT unique_name UNIQUE(name)
 );
 
 CREATE TABLE Roles
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
+  CONSTRAINT unique_name UNIQUE(name)
 );
 
 CREATE TABLE Locations
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
+  CONSTRAINT unique_name UNIQUE(name)
 );
 
 -- --Ced's:
@@ -43,8 +47,8 @@ CREATE TABLE Locations
 -- VALUES (1, 1, 1, '12/1/2020', '12/15/2020', TRUE, 'http://www.google.com/CEO', TRUE, FALSE, FALSE);
 
 -- -- Richie
--- INSERT INTO Applications (company_id, role_id, location_id, applied_date, deadline, cover_letter_submitted, job_url, submitted, received_phone_screen, received_on_site)
--- VALUES (1, 1, 1, '12/1/2020', '12/15/2020', TRUE, 'http://uber.com', TRUE, FALSE, FALSE);
+INSERT INTO Applications (company_id, role_id, location_id, applied_date, deadline, cover_letter_submitted, job_url, submitted, received_phone_screen, received_on_site)
+VALUES (1, 1, 1, '3/5/2020', '10/3/2014', TRUE, 'hi.com', TRUE, FALSE, FALSE);
 
 --   _id SERIAL PRIMARY KEY,
 --   company_id INT NOT NULL,
