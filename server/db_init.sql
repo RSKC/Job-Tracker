@@ -11,9 +11,9 @@ CREATE TABLE Applications
   submitted BOOLEAN NOT NULL,
   received_phone_screen BOOLEAN NOT NULL,
   received_on_site BOOLEAN NOT NULL,
-  FOREIGN KEY (company_id) REFERENCES companies (_id),
-  FOREIGN KEY (role_id) REFERENCES roles (_id),
-  FOREIGN KEY (location_id) REFERENCES locations (_id)
+  FOREIGN KEY (company_id) REFERENCES Companies (_id),
+  FOREIGN KEY (role_id) REFERENCES Roles (_id),
+  FOREIGN KEY (location_id) REFERENCES Locations (_id)
 );
 
 CREATE TABLE Companies
