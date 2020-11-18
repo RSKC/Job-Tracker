@@ -62,9 +62,16 @@ const NewApplication = () => {
         <label htmlFor="coverLetter">
           Have you submitted your cover letter for this job
         </label>
+        {/* <input
+          type="hidden"
+          id="coverLetter"
+          name="coverLetter"
+          value="false"
+          className="checkbox"
+          /> */}
         <input
           type="checkbox"
-          id="applied"
+          id="coverLetter"
           name="coverLetter"
           value="true"
           className="checkbox"
@@ -73,6 +80,13 @@ const NewApplication = () => {
         <label htmlFor="applied">
           Have you submitted your application for this job
         </label>
+        {/* <input
+          type="hidden"
+          id="applied"
+          name="applied"
+          value="false"
+          className="checkbox"
+          /> */}
         <input
           type="checkbox"
           id="applied"
@@ -84,6 +98,13 @@ const NewApplication = () => {
         <label htmlFor="phoneScreen">
           Have you received phone screen for this job application?
         </label>
+        {/* <input
+          type="hidden"
+          id="phoneScreen"
+          name="phoneScreen"          
+          value={checked}
+          className="checkbox"
+          /> */}
         <input
           type="checkbox"
           id="phoneScreen"
@@ -95,6 +116,13 @@ const NewApplication = () => {
         <label htmlFor="onsite">
           Have you received onsite interview for this job application?
         </label>
+        {/* <input
+          type="hidden"
+          id="onsite"
+          name="onsite"
+          value="false"
+          className="checkbox"
+          /> */}
         <input
           type="checkbox"
           id="onsite"
