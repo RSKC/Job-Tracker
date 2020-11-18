@@ -9,19 +9,21 @@ import './app.scss';
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <div className="switch">
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/new-application">
-            <NewApplication />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="router">
+      <Router>
+        <Navbar />
+        <div className="switch">
+          <Switch>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/new-application">
+              <NewApplication />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </div>
   );
 };
 

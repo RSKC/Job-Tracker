@@ -1,99 +1,160 @@
 @import '../styles';
 
+.new-application-background {
+  @include flexCenter();
+  background-color: $primary;
+  background-image: linear-gradient(
+    to bottom right,
+    $primary,
+    $gradient-finish
+  );
+  z-index: -1;
+  height: 100%;
+}
+
+.form-div {
+  background-color: $white;
+  border-radius: 5px;
+  height: 75vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px !important;
+}
+
 #application-form {
-  padding: 30px;
+  padding: 0px 30px;
 
   * {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   input {
     padding: 5px 10px;
-    margin-left: 10px;
+    padding-left: 0px;
 
-    box-shadow: 1px 1px 5px #aaaaaa;
-    border: none;
-    border-radius: 3px;
+    margin-top: 5px;
+
+    // box-shadow: 1px 1px 5px #aaaaaa;
+    background-color: $white;
+
+    // border-color: $primary;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: #aaaaaa;
+
+    width: 100%;
+  }
+
+  input:hover,
+  input:focus {
+    border-color: $primary;
+  }
+
+  .submit-div {
+    @include flexCenter();
   }
 
   #submit {
+    width: 40%;
+
     margin-top: 3px;
     margin-left: 0px;
 
-    background-color: $primary;
+    background-image: linear-gradient(
+      to bottom right,
+      $primary,
+      $gradient-finish
+    );
     color: $white;
 
+    border: none;
     border-radius: 5px;
     padding: 5px 10px;
 
     &:hover {
       cursor: pointer;
-      background-color: $primary-hover;
+      // background-color: $primary-hover;
+      background-image: linear-gradient(
+        to bottom right,
+        $primary-hover,
+        $gradient-finish-hover
+      );
     }
   }
 
-  // input[type='checkbox'] {
-  //   visibility: hidden;
-  // }
+  ::placeholder {
+    color: rgba(193, 193, 193, 0.932);
+  }
 }
 
-// $checkbox-size: 20px;
-// $checkbox-border: #cecece;
-// $checkbox-selected: #02bb72; // Primary colour
+// create a custom checkbox
+.checkmark {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 5px;
+  background-color: lightgray;
+  border: 1px solid black;
 
-// //CSCC ARTCICLE
-// .checkbox {
-//   position: absolute;
-//   opacity: 0;
-// }
-// // Text
-// & + label {
-//   display: inline-block;
-//   position: relative;
-//   cursor: pointer;
-//   line-height: $checkbox-size;
-//   padding-left: $checkbox-size + 10;
-//   color: #666; // Label colour
+  margin-left: 5px;
+  margin-top: 2px;
 
-//   // Checkbox
-//   &:before {
-//     position: absolute;
-//     display: block;
-//     left: 0;
-//     top: 0;
-//     content: '';
-//     background: transparent;
-//     width: $checkbox-size;
-//     height: $checkbox-size;
+  // ??Create the checkmark/indicator (hidden when not checked)
+  :after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+}
 
-//     box-shadow: inset 0 0 0 1px $checkbox-border;
-//     border-radius: 4px;
-//     transition: 200ms ease-in-out all;
-//   }
+// style the lable and checkbox default behavior
+.container {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-//   // Tick
-//   &:after {
-//     position: absolute;
-//     display: block;
-//     top: 5px;
-//     left: 8px;
-//     content: '';
-//     width: 3px;
-//     height: 7px;
-//     border-right: 1px solid transparent;
-//     border-bottom: 1px solid transparent;
-//     transform: rotate(45deg);
+  // hide the built-in checkbox
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 
-//     transition: 200ms ease-in-out all;
-//   }
-// }
+  // specify hover effect
+  :hover input ~ .checkmark {
+    background-color: darkgray;
+  }
 
-// // Hover
-// & + label:hover {
-//   color: #333;
-// }
-
-// // Focus
-// & + label:focus {
-//   outline: none;
-// }
+  // specify the color once checked
+  input:checked ~ .checkmark {
+    // background-color: $primary;
+    background-image: linear-gradient(
+      to bottom right,
+      $primary,
+      $gradient-finish
+    );
+  }
+  // ??style checkmark indicator
+  .checkmark:after {
+    left: 2px;
+    top: 1px;
+    width: 1px;
+    height: 2px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
