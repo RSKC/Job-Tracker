@@ -46,19 +46,19 @@ const dbController = {
     // Our frontend will send an array of 2 values when a checkbox is checked. If the length
     // of the property is > 1 (meaning at least 2 values are there), then we know the box was 
     // checked. Otherwise, the box was not checked.
-    const coverLetterBool = Boolean(coverLetter);
-    const appliedBool = Boolean(applied);
-    const phoneScreenBool = Boolean(phoneScreen);
-    const onsiteBool = Boolean(onsite);
+    const coverLetterBool = coverLetter ? 'TRUE': 'FALSE';
+    const appliedBool = applied ? 'TRUE': 'FALSE';
+    const phoneScreenBool = phoneScreen ? 'TRUE': 'FALSE';
+    const onsiteBool = onsite ? 'TRUE': 'FALSE';
     console.log('5')
     
     const newApplicationQuery = `INSERT INTO Applications (company_id, role_id, location_id, applied_date, 
       deadline, cover_letter_submitted, job_url, submitted, received_phone_screen, 
-      received_on_site) VALUES (${companyId}, ${roleId}, ${locationId}, ${date}, ${deadline}, ${coverLetterBool}, 
-      ${url}, ${appliedBool}, ${phoneScreenBool}, ${onsiteBool});`
-    const newApplicationResult = await db.query(newApplicationQuery).catch((err) => next(err))
-    // const locationId = locationIdResult.rows[0]['_id'];
+      received_on_site) VALUES (${companyId}, ${roleId}, ${locationId}, '${date}', '${deadline}', ${coverLetterBool}, 
+      '${url}', ${appliedBool}, ${phoneScreenBool}, ${onsiteBool});`
     console.log('6')
+    const newApplicationResult = await db.query(newApplicationQuery).catch((err) => next(err))
+    console.log('7')
     
     return next();
     }

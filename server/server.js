@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/new-application-form', dbController.addApplication, (req, res) => {
-  console.log(`Request body is: ${req.body.phoneScreen}`);
+  console.log(`Request body is: ${req.body}`);
   res.redirect('/new-application');
 });
 
