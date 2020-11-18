@@ -16,10 +16,10 @@ app.post("/new-application-form", dbController.addApplication, (req, res) => {
 
 app.get(
   "/metrics",
-  metricsController.getMetrics,
+  metricsController.getRawData,
   metricsController.getConversionRate,
   (req, res) => {
-    return res.status(200).json(res.locals);
+    return res.status(200).json(res.locals.metrics);
   }
 );
 

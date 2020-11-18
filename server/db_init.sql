@@ -10,7 +10,7 @@ CREATE TABLE Applications
   job_url VARCHAR NOT NULL,
   submitted BOOLEAN NOT NULL,
   received_phone_screen BOOLEAN NOT NULL,
-  received_on_site BOOLEAN NOT NULL,
+  rejected BOOLEAN NOT NULL,
   FOREIGN KEY (company_id) REFERENCES companies (_id),
   FOREIGN KEY (role_id) REFERENCES roles (_id),
   FOREIGN KEY (location_id) REFERENCES locations (_id)
