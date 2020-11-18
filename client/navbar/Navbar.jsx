@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
@@ -10,9 +10,14 @@ const Navbar = () => {
     const sendTo = '/' + page.toLowerCase().replace(/ /g, '-');
 
     return (
-      <Link to={sendTo} className="link" key={`${page}-${idx}`}>
+      <NavLink
+        to={sendTo}
+        className="link"
+        activeClassName="active-link"
+        key={`${page}-${idx}`}
+      >
         {page}
-      </Link>
+      </NavLink>
     );
   });
 

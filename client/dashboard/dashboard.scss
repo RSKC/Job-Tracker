@@ -4,7 +4,14 @@
   // This centers a div, check client/styles.scss to see the mixin's definition
   @include flexCenter();
   flex-direction: row;
+  align-content: flex-start;
   flex-wrap: wrap;
 
-  margin-top: 40px;
+  background-image: linear-gradient(
+    to bottom right,
+    $primary,
+    $gradient-finish
+  );
+  z-index: -1;
+  height: 100%;
 }
