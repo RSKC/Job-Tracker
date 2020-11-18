@@ -37,10 +37,10 @@ const NewApplication = () => {
           <input type="text" id="url" name="url" />
           <br />
           <label htmlFor="coverLetter" className="container">
-            Have you submitted your cover letter for this job
+            Have you submitted your cover letter for this job?
             <input
               type="checkbox"
-              id="applied"
+              id="coverLetter"
               name="coverLetter"
               o
               value="true"
@@ -50,7 +50,7 @@ const NewApplication = () => {
           </label>
           <br />
           <label htmlFor="applied" className="container">
-            Have you submitted your application for this job
+            Have you submitted your application for this job?
             <input
               type="checkbox"
               id="applied"
