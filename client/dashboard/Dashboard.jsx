@@ -22,41 +22,41 @@ const Dashboard = () => {
   const conversionRateThreshold = 20;
   const offersReceivedThreshold = 10;
 
-  // useEffect(() => {
-  //   /*
-  //   Response object:
+  useEffect(() => {
+    /*
+    Response object:
 
-  //   {
-  //    conversionRate: string,
-  //    appsSubmitted: string,
-  //    interviewsReceived: string,
-  //    offersReceived: string,
-  //    rejectionsReceived: string,
-  //    waitingOn: string
-  //   }
-  //   */
+    {
+     conversionRate: string,
+     appsSubmitted: string,
+     interviewsReceived: string,
+     offersReceived: string,
+     rejectionsReceived: string,
+     waitingOn: string
+    }
+    */
 
-  //   fetch('http://localhost:3000/metrics')
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       const newConversionRate = res.conversionRate;
-  //       const newAppsSubmitted = res.appsSubmitted;
-  //       const newInterviewReceived = res.interviewsReceived;
-  //       const newOffersReceived = res.offersReceived;
-  //       const newRejectionReceived = res.rejectionsReceived;
-  //       const newWaitingOn = res.waitingOn;
+    fetch('http://localhost:3000/metrics')
+      .then((res) => res.json())
+      .then((res) => {
+        const newConversionRate = res.conversionRate;
+        const newAppsSubmitted = res.appsSubmitted;
+        const newInterviewReceived = res.interviewsReceived;
+        const newOffersReceived = res.offersReceived;
+        const newRejectionReceived = res.rejectionsReceived;
+        const newWaitingOn = res.waitingOn;
 
-  //       setConversionRate(newConversionRate);
-  //       setAppsSubmitted(newAppsSubmitted);
-  //       setInterviewsReceived(newInterviewReceived);
-  //       setOffersReceived(newOffersReceived);
-  //       setRejectionsReceived(newRejectionReceived);
-  //       setWaitingOn(newWaitingOn);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+        setConversionRate(newConversionRate);
+        setAppsSubmitted(newAppsSubmitted);
+        setInterviewsReceived(newInterviewReceived);
+        setOffersReceived(newOffersReceived);
+        setRejectionsReceived(newRejectionReceived);
+        setWaitingOn(newWaitingOn);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="dashboard">
