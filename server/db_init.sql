@@ -1,21 +1,3 @@
-CREATE TABLE Applications
-(
-  _id SERIAL PRIMARY KEY,
-  company_id INT NOT NULL,
-  role_id INT NOT NULL,
-  location_id INT NOT NULL,
-  applied_date DATE NOT NULL,
-  deadline DATE NOT NULL,
-  cover_letter_submitted BOOLEAN NOT NULL,
-  job_url VARCHAR NOT NULL,
-  submitted BOOLEAN NOT NULL,
-  received_phone_screen BOOLEAN NOT NULL,
-  received_on_site BOOLEAN NOT NULL,
-  FOREIGN KEY (company_id) REFERENCES Companies (_id),
-  FOREIGN KEY (role_id) REFERENCES Roles (_id),
-  FOREIGN KEY (location_id) REFERENCES Locations (_id)
-);
-
 CREATE TABLE Companies
 (
   _id SERIAL PRIMARY KEY,
@@ -32,6 +14,24 @@ CREATE TABLE Locations
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
+);
+
+CREATE TABLE Applications
+(
+  _id SERIAL PRIMARY KEY,
+  company_id INT NOT NULL,
+  role_id INT NOT NULL,
+  location_id INT NOT NULL,
+  applied_date DATE NOT NULL,
+  deadline DATE NOT NULL,
+  cover_letter_submitted BOOLEAN NOT NULL,
+  job_url VARCHAR NOT NULL,
+  submitted BOOLEAN NOT NULL,
+  received_phone_screen BOOLEAN NOT NULL,
+  received_on_site BOOLEAN NOT NULL,
+  FOREIGN KEY (company_id) REFERENCES Companies (_id),
+  FOREIGN KEY (role_id) REFERENCES Roles (_id),
+  FOREIGN KEY (location_id) REFERENCES Locations (_id)
 );
 
 -- --Ced's:
