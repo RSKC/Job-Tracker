@@ -2,7 +2,6 @@
 
 .new-application-background {
   @include flexCenter();
-  background-color: $primary;
   background-image: linear-gradient(
     to bottom right,
     $primary,
