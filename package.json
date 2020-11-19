@@ -32,7 +32,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

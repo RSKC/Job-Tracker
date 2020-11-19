@@ -3,12 +3,11 @@ import React from 'react';
 import './metric.scss';
 
 const Metric = ({ title, data, threshold }) => {
-  const dataIsZero = data === '0';
-  const needsPercentSign = data !== '0' && title === 'Conversion Rate';
+  const isConversionRate = title === 'Conversion Rate';
 
   const black = '#000000';
   const green = '#27bc27';
-  const yellow = '#d72828';
+  const red = '#d72828';
 
   let color;
   if (threshold === 'None') {
@@ -17,7 +16,7 @@ const Metric = ({ title, data, threshold }) => {
     if (parseInt(data, 10) >= threshold) {
       color = green;
     } else {
-      color = yellow;
+      color = red;
     }
   }
 
@@ -27,9 +26,10 @@ const Metric = ({ title, data, threshold }) => {
     <div className="card">
       <p>{title}</p>
       <h1 style={dataStyles}>
-        {dataIsZero ? 'None' : data}
-        {needsPercentSign ? '%' : ''}
+        {data}
+        {isConversionRate ? '%' : ''}
       </h1>
+      <p style={{ fontSize: '13px' }}>{isConversionRate ? 'Phone Screens / Applications Submitted' : ' '}</p>
     </div>
   );
 };
