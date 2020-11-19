@@ -29,17 +29,17 @@ const dbController = {
     // selecte the IDs
     const companyIdQuery = `SELECT _id FROM Companies WHERE name = '${companyName}';`;
     const companyIdResult = await db.query(companyIdQuery).catch((err) => next(err))
-    const companyId = companyIdResult.rows[0]['_id'];
+    const companyId = companyIdResult.rows[0]._id;
     
     const roleIdQuery = `SELECT _id FROM Roles WHERE name = '${role}';`;
-    const roleIdResult = await db.query(roleIdQuery).catch((err) => next(err))
-    const roleId = roleIdResult.rows[0]['_id'];
+    const roleIdResult = await db.query(roleIdQuery).catch((err) => next(err))  
+    const roleId = roleIdResult.rows[0]._id;
 
     const locationIdQuery = `SELECT _id FROM Locations WHERE name = '${location}';`;
     const locationIdResult = await db.query(locationIdQuery).catch((err) => next(err));
-    const locationId = locationIdResult.rows[0]['_id'];
+    const locationId = locationIdResult.rows[0]._id;
 
-    // If coverLetter is undefined, we wanna set it to false
+    // If coverLetter is undefined, we want to set it to false
     const coverLetterBool = coverLetter ? 'TRUE': 'FALSE';
     const appliedBool = applied ? 'TRUE': 'FALSE';
     const phoneScreenBool = phoneScreen ? 'TRUE': 'FALSE';
@@ -50,8 +50,7 @@ const dbController = {
       received_on_site) VALUES (${companyId}, ${roleId}, ${locationId}, '${date}', '${deadline}', ${coverLetterBool}, 
       '${url}', ${appliedBool}, ${phoneScreenBool}, ${onsiteBool});`
     const newApplicationResult = await db.query(newApplicationQuery).catch((err) => next(err))
-    // console.log('7')
-    // console.log(newApplicationResult);
+
     res.locals.newApplication = newApplicationResult;
     return next();
     }

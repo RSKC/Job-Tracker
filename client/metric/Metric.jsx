@@ -7,7 +7,7 @@ const Metric = ({ title, data, threshold }) => {
 
   const black = '#000000';
   const green = '#27bc27';
-  const yellow = '#d72828';
+  const red = '#d72828';
 
   let color;
   if (threshold === 'None') {
@@ -16,7 +16,7 @@ const Metric = ({ title, data, threshold }) => {
     if (parseInt(data, 10) >= threshold) {
       color = green;
     } else {
-      color = yellow;
+      color = red;
     }
   }
 

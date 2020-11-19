@@ -64,7 +64,7 @@ const NewApplication = () => {
           <br />
           <label htmlFor="url">Job application URL</label>
           <br />
-          <input type="text" id="url" name="url" placeholder="e.g. uber.com" />
+          <input type="text" id="url" name="url" placeholder="e.g. uber.com" required />
           <br />
           <label htmlFor="coverLetter" className="container">
             Have you submitted your cover letter for this job?

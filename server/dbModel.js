@@ -4,7 +4,7 @@ const dbInfo = {
   user: 'postgres',
   host: 'localhost',
   database: 'jobdb',
-  password: 'leeced',
+  password: '',
   port: 5432
 }
 

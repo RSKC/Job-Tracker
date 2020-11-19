@@ -2,21 +2,21 @@ CREATE TABLE Companies
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
-    CONSTRAINT unique_name UNIQUE(name)
+    CONSTRAINT unique_company_name UNIQUE(name)
 );
 
 CREATE TABLE Roles
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
-    CONSTRAINT unique_name UNIQUE(name)
+    CONSTRAINT unique_role_name UNIQUE(name)
 );
 
 CREATE TABLE Locations
 (
   _id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL
-    CONSTRAINT unique_name UNIQUE(name)
+    CONSTRAINT unique_location_name UNIQUE(name)
 );
 
 CREATE TABLE Applications
