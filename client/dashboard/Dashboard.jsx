@@ -7,7 +7,7 @@ import './dashboard.scss';
 const Dashboard = () => {
   const [conversionRate, setConversionRate] = useState('0');
   const [numAppsSubmitted, setNumAppsSubmitted] = useState('0');
-  const [numOnsiteReceived, setNumOnsiteReceived] = useState('0')
+  const [numOnsiteReceived, setNumOnsiteReceived] = useState('0');
   const [numPhoneScreens, setNumPhoneScreens] = useState('0');
   const [numRejections, setNumRejections] = useState('0');
   const [numWaiting, setNumWaiting] = useState('0');
@@ -77,11 +77,7 @@ const Dashboard = () => {
         title={'Rejections Received'}
         threshold={'None'}
       />
-      <Metric
-        data={numWaiting}
-        title={'Apps Waiting'}
-        threshold={'None'}
-      />
+      <Metric data={numWaiting} title={'Apps Waiting'} threshold={'None'} />
     </div>
   );
 };

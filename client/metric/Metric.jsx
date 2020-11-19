@@ -29,7 +29,7 @@ const Metric = ({ title, data, threshold }) => {
         {data}
         {isConversionRate ? '%' : ''}
       </h1>
-      <p style={{ fontSize: '13px' }}>{isConversionRate ? 'Phone Screens / Applications Submitted' : ' '}</p>
+      <p style={{ fontSize: '13px' }}>{isConversionRate ? 'Phone Screens ÷ Applications Submitted' : ' '}</p>
     </div>
   );
 };
