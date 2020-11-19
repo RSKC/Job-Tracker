@@ -2,10 +2,13 @@
 
 .navbar {
   background-color: #ffffff;
-  box-shadow: 0px 3px 5px #aaaaaa;
+  box-shadow: 0px 3px 10px #c0c0c0;
+  z-index: 1;
 
   // Spacing
   padding: 10px 0px;
+
+  flex: 0 1 4vh;
 }
 
 .link {
@@ -21,4 +24,8 @@
     color: $primary;
     transition: 0.25s;
   }
+}
+
+.active-link {
+  text-decoration: underline;
 }

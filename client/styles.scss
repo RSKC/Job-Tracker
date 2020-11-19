@@ -3,8 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap'); // Our font - Mulish
 
 // Variables
-$primary: rgb(88, 184, 100);
-$primary-hover: rgb(116, 184, 125);
+$primary: rgb(41, 209, 131);
+$primary-hover: rgb(37, 192, 120);
+$gradient-finish: rgb(41, 203, 209);
+$gradient-finish-hover: rgb(34, 172, 177);
 
 $white: #f6f6f6;
 
@@ -22,7 +24,17 @@ $white: #f6f6f6;
   font-family: 'Mulish';
 }
 
+html {
+  margin: 0px;
+  height: 100%;
+}
+
 body {
   margin: 0px;
   background-color: $white;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

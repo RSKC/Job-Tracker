@@ -1,6 +1,12 @@
 @import '../styles';
 
+.router {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
 .switch {
   background-color: $white;
-  margin-top: 5px;
+  flex: 1 1 auto;
 }
