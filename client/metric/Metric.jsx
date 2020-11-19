@@ -4,7 +4,6 @@ import './metric.scss';
 
 const Metric = ({ title, data, threshold }) => {
   const isConversionRate = title === 'Conversion Rate';
-  const needsPercentSign = data !== '0' && isConversionRate;
 
   const black = '#000000';
   const green = '#27bc27';
@@ -28,7 +27,7 @@ const Metric = ({ title, data, threshold }) => {
       <p>{title}</p>
       <h1 style={dataStyles}>
         {data}
-        {needsPercentSign ? '%' : ''}
+        {isConversionRate ? '%' : ''}
       </h1>
       <p style={{ fontSize: '13px' }}>{isConversionRate ? 'Phone Screens / Applications Submitted' : ' '}</p>
     </div>

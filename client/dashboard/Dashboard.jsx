@@ -31,8 +31,6 @@ const Dashboard = () => {
     fetch('http://localhost:3000/metrics')
       .then((res) => res.json())
       .then((res) => {
-        console.log(`here is obj: ${Object.keys(res)}`)
-
         const newConversionRate = res.conversionRate;
         const newNumAppsSubmitted = res.numAppsSubmitted;
         const newNumOnsiteReceived = res.numOnSiteReceived;
