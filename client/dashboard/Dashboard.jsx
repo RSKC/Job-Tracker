@@ -5,22 +5,14 @@ import Metric from '../metric/Metric';
 import './dashboard.scss';
 
 const Dashboard = () => {
-  // const [conversionRate, setConversionRate] = useState('0');
-  // const [appsSubmitted, setAppsSubmitted] = useState('0');
-  // const [interviewsReceived, setInterviewsReceived] = useState('0');
-  // const [offersReceived, setOffersReceived] = useState('0');
-  // const [rejectionsReceived, setRejectionsReceived] = useState('0');
-  // const [waitingOn, setWaitingOn] = useState('0');
-
-  const [conversionRate, setConversionRate] = useState('20');
-  const [appsSubmitted, setAppsSubmitted] = useState('100');
-  const [interviewsReceived, setInterviewsReceived] = useState('20');
-  const [offersReceived, setOffersReceived] = useState('3');
-  const [rejectionsReceived, setRejectionsReceived] = useState('45');
-  const [waitingOn, setWaitingOn] = useState('32');
+  const [conversionRate, setConversionRate] = useState('0');
+  const [numAppsSubmitted, setNumAppsSubmitted] = useState('0');
+  const [numOnsiteReceived, setNumOnsiteReceived] = useState('0')
+  const [numPhoneScreens, setNumPhoneScreens] = useState('0');
+  const [numRejections, setRejections] = useState('0');
+  const [numWaiting, setNumWaiting] = useState('0');
 
   const conversionRateThreshold = 20;
-  const offersReceivedThreshold = 10;
 
   useEffect(() => {
     /*
@@ -28,30 +20,32 @@ const Dashboard = () => {
 
     {
      conversionRate: string,
-     appsSubmitted: string,
-     interviewsReceived: string,
-     offersReceived: string,
-     rejectionsReceived: string,
-     waitingOn: string
+     numAppsSubmitted: string,
+     numOnsiteReceived: string,
+     numPhoneScreens: string
+     numRejections: string,
+     numWaiting: string
     }
     */
 
     fetch('http://localhost:3000/metrics')
       .then((res) => res.json())
       .then((res) => {
+        console.log(`here is obj: ${Object.keys(res)}`)
+
         const newConversionRate = res.conversionRate;
-        const newAppsSubmitted = res.appsSubmitted;
-        const newInterviewReceived = res.interviewsReceived;
-        const newOffersReceived = res.offersReceived;
-        const newRejectionReceived = res.rejectionsReceived;
-        const newWaitingOn = res.waitingOn;
+        const newNumAppsSubmitted = res.numAppsSubmitted;
+        const newNumOnsiteReceived = res.numOnSiteReceived;
+        const newNumPhoneScreens = res.numPhoneScreens;
+        const newNumRejections = res.numRejections;
+        const newNumWaiting = res.numWaiting;
 
         setConversionRate(newConversionRate);
-        setAppsSubmitted(newAppsSubmitted);
-        setInterviewsReceived(newInterviewReceived);
-        setOffersReceived(newOffersReceived);
-        setRejectionsReceived(newRejectionReceived);
-        setWaitingOn(newWaitingOn);
+        setNumAppsSubmitted(newNumAppsSubmitted);
+        setNumOnsiteReceived(newNumOnsiteReceived);
+        setNumPhoneScreens(newNumPhoneScreens);
+        setNumRejections(newNumRejections);
+        setNumWaiting(newNumWaiting);
       })
       .catch((error) => {
         console.log(error);
@@ -66,26 +60,30 @@ const Dashboard = () => {
         threshold={conversionRateThreshold}
       />
       <Metric
-        data={appsSubmitted}
+        data={numAppsSubmitted}
         title={'Apps Submitted'}
         threshold={'None'}
       />
       <Metric
-        data={interviewsReceived}
-        title={'Interviews Received'}
+        data={numOnsiteReceived}
+        title={'Onsite Interviews Received'}
         threshold={'None'}
       />
       <Metric
-        data={offersReceived}
-        title={'Offers Received'}
-        threshold={offersReceivedThreshold}
+        data={numPhoneScreens}
+        title={'Phone Screens Received'}
+        threshold={'None'}
       />
       <Metric
-        data={rejectionsReceived}
+        data={numRejections}
         title={'Rejections Received'}
         threshold={'None'}
       />
-      <Metric data={waitingOn} title={'Waiting On'} threshold={'None'} />
+      <Metric
+        data={numWaiting}
+        title={'Apps Waiting'}
+        threshold={'None'}
+      />
     </div>
   );
 };

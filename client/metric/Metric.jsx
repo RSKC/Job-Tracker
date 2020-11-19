@@ -3,8 +3,8 @@ import React from 'react';
 import './metric.scss';
 
 const Metric = ({ title, data, threshold }) => {
-  const dataIsZero = data === '0';
-  const needsPercentSign = data !== '0' && title === 'Conversion Rate';
+  const isConversionRate = title === 'Conversion Rate';
+  const needsPercentSign = data !== '0' && isConversionRate;
 
   const black = '#000000';
   const green = '#27bc27';
@@ -27,9 +27,10 @@ const Metric = ({ title, data, threshold }) => {
     <div className="card">
       <p>{title}</p>
       <h1 style={dataStyles}>
-        {dataIsZero ? 'None' : data}
+        {data}
         {needsPercentSign ? '%' : ''}
       </h1>
+      <p style={{ fontSize: '13px' }}>{isConversionRate ? 'Phone Screens / Applications Submitted' : ' '}</p>
     </div>
   );
 };

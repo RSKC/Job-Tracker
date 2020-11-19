@@ -50,8 +50,8 @@ const dbController = {
       received_on_site) VALUES (${companyId}, ${roleId}, ${locationId}, '${date}', '${deadline}', ${coverLetterBool}, 
       '${url}', ${appliedBool}, ${phoneScreenBool}, ${onsiteBool});`
     const newApplicationResult = await db.query(newApplicationQuery).catch((err) => next(err))
-    console.log('7')
-    console.log(newApplicationResult);
+    // console.log('7')
+    // console.log(newApplicationResult);
     res.locals.newApplication = newApplicationResult;
     return next();
     }

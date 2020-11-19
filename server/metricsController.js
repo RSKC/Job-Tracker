@@ -15,7 +15,7 @@ const metricsController = {
   
     const numPhoneScreens = await db.query('SELECT COUNT(*) FROM Applications WHERE received_phone_screen = TRUE;');
     res.locals.rawData.numPhoneScreens = numPhoneScreens.rows[0].count;
-    console.log('numPhoneScreens', numPhoneScreens.rows[0].count);
+    // console.log('numPhoneScreens', numPhoneScreens.rows[0].count);
     //const numOffers = await db.query() // will come back to this
     const numRejections = await db.query('SELECT COUNT(*) FROM Applications WHERE rejected = TRUE;');
     res.locals.rawData.numRejections = numRejections.rows[0].count;
@@ -25,7 +25,7 @@ const metricsController = {
     const numOnSiteReceived = await db.query('SELECT COUNT(*) FROM Applications WHERE received_on_site = TRUE;');
     res.locals.rawData.numOnSiteReceived = numOnSiteReceived.rows[0].count;
 
-    console.log('rawData',res.locals.rawData);
+    // console.log('rawData',res.locals.rawData);
     return next();
   },
 

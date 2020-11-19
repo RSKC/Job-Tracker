@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 
 const metricsController = require("./metricsController");
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.post("/new-application-form", dbController.addApplication, (req, res) => {
   // console.log(`Request body is: ${req.body}`);
